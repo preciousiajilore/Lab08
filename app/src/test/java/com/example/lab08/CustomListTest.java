@@ -17,7 +17,7 @@ public class CustomListTest {
     @Test
     void testDelete() {
         //This makes a mock city list
-        CityList cityList = mockCityList();
+        CustomList cityList = new CustomList();
 
         //Create a new city
         City city = new City("Yellowknife", "Northwest Territories");
@@ -28,7 +28,7 @@ public class CustomListTest {
         });
 
         //Add the city to the list
-        cityList.add(city);
+        cityList.addCity(city);
 
         //Remove the city from the list
         cityList.delete(city);
