@@ -1,5 +1,10 @@
 package com.example.lab08;
 
+
+/*
+* This is a class for a City object
+*
+* */
 public class City {
     private String city;
     private String province;
