@@ -42,5 +42,29 @@ public class CustomListTest {
 
 
     }
+    @Test
+    void testCountCities(){
+        //This makes a mock city list
+        CustomList cityList = new CustomList();
+
+        //Checks if the size of the cityList is 1
+        assertEquals(1, cityList.countCities());
+
+        //Make a new city
+        City city = new City("Yellowknife", "Northwest Territories");
+
+        //Add the city to the list
+        cityList.addCity(city);
+
+        //Checks if the size of the cityList is 2
+        assertEquals(2, cityList.countCities());
+
+        //Remove the city from the list
+        cityList.delete(city);
+
+        //Checks if the size of the cityList is 1
+        assertEquals(1, cityList.countCities());
+    }
+
 
 }
