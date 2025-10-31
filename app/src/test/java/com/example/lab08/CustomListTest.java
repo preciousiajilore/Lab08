@@ -10,7 +10,36 @@ public class CustomListTest {
         list.addCity(calgary);
         // This will fail initially because hasCity() doesn't exist
         assertTrue(list.hasCity(calgary));
-        //t2hudv
+
+
+    }
+
+    @Test
+    void testDelete() {
+        //This makes a mock city list
+        CityList cityList = mockCityList();
+
+        //Create a new city
+        City city = new City("Yellowknife", "Northwest Territories");
+
+        //Try and remove the city from the list
+        assertThrows(IllegalArgumentException.class, () -> {
+            cityList.delete(city);
+        });
+
+        //Add the city to the list
+        cityList.add(city);
+
+        //Remove the city from the list
+        cityList.delete(city);
+
+        //Check if the city is in the list
+        assertFalse(cityList.hasCity(city));
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            cityList.delete(city);
+        });
+
 
     }
 
